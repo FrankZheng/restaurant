@@ -26,6 +26,7 @@
 
 -(void)loadView {
     self.view = [[RoomView alloc] initWithFrame:_frame];
+    self.view.backgroundColor  = [UIColor blackColor];
 }
 
 - (void)viewDidLoad {
@@ -36,6 +37,16 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)loadRoom:(Room *)room {
+    self.room = room;
+    //load the tables from room, and create tableviews, and load the table views 
+}
+
+-(void)addTable:(DiningTable *)table {
+    //add a new table
+    //create a table view if necessary
 }
 
 @end

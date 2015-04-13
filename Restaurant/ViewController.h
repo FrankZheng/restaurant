@@ -12,7 +12,7 @@
 
 @interface ViewController : UIViewController<RoomPickerDelegate, UIPopoverControllerDelegate>
 
-@property(nonatomic, weak) IBOutlet RoomView *roomView;
+@property(nonatomic, weak) IBOutlet UIView *roomViewPlaceHolder;
 @property(nonatomic, weak) IBOutlet UIButton *btnPickRoom;
 
 

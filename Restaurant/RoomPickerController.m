@@ -102,6 +102,13 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Room *room = [_rooms objectAtIndex:indexPath.row];
+    if(_delegate != nil) {
+        [_delegate selectedRoom:room];
+    }
+}
+
 
 /*
 // Override to support conditional editing of the table view.

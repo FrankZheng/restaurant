@@ -29,6 +29,7 @@
 @property(nonatomic, strong) RoomPickerController *roomPicker;
 @property(nonatomic, strong) NSMutableArray *rooms;
 @property(nonatomic, strong) UIPopoverController *roomPickerPopover;
+@property(nonatomic, strong) RoomViewController *roomViewController;
 
 @end
 
@@ -58,6 +59,8 @@
 }
 
 -(IBAction)addTable:(id)sender {
+    
+#if 0
     NSLog(@"roomView, %@", NSStringFromCGRect(self.roomView.frame));
     
     static CGFloat startX = kPadding;
@@ -92,6 +95,7 @@
     } else {
         startY += kTableYSpacing + kTableDefaultHeight;
     }
+#endif
 }
 
 -(void)handleTap:(UITapGestureRecognizer*)sender {
@@ -108,11 +112,13 @@
 
 - (void)handlePan:(UIPanGestureRecognizer *)recognizer {
     NSLog(@"handlePan, %ld", recognizer.state);
+#if 0
     
     CGPoint translation = [recognizer translationInView:self.roomView];
     recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x,
                                          recognizer.view.center.y + translation.y);
     [recognizer setTranslation:CGPointMake(0, 0) inView:self.roomView];
+#endif
 }
 
 - (void)addRoom:(id)sender {
@@ -161,13 +167,20 @@
     //set the btn text
     [_btnPickRoom setTitle:room.name forState:UIControlStateNormal];
     
-    //create the room view and add it into current
-    //RoomViewController* roomViewController =
-    
     //Dismiss the popover if it's showing.
     if (_roomPickerPopover) {
         [_roomPickerPopover dismissPopoverAnimated:YES];
         _roomPickerPopover = nil;
+    }
+    
+    if( _roomViewController == nil) {
+        //Create the room view and add it into current view
+        _roomViewController = [[RoomViewController alloc] initWithFrame:_roomViewPlaceHolder.frame];
+        [self.view addSubview:_roomViewController.view];
+    }
+    
+    if(_roomViewController.room != room) {
+        [_roomViewController loadRoom:room];
     }
 }
 
