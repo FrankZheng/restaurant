@@ -23,6 +23,7 @@
 @property(nonatomic, strong) DiningTableView *selectedTableView;
 @property(nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
 
+
 @end
 
 @implementation RoomViewController
@@ -30,18 +31,16 @@
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super init]) {
         _frame = frame;
-        
         [self setup];
-        
     }
     return self;
 }
 
 -(void)setup {
     _tableViews = [[NSMutableArray alloc] init];
+    //create tap recognizer to handle tap
     _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     _tapRecognizer.numberOfTapsRequired = 1;
-    
 }
 
 -(void)loadView {
@@ -50,7 +49,6 @@
     //setup the view properties
     self.view.backgroundColor  = [UIColor blackColor];
     [self.view addGestureRecognizer:_tapRecognizer];
-    
 }
 
 - (void)viewDidLoad {
@@ -77,12 +75,38 @@
     UIView* subview = [view hitTest:loc withEvent:nil];
     
     if([subview isKindOfClass:[DiningTableView class]]) {
-        //clear the current selection
-        [_selectedTableView unselect];
-        
-        _selectedTableView = (DiningTableView *)subview;
-        [_selectedTableView select];
+        if(subview != _selectedTableView) {
+            //clear the current selection
+            [_selectedTableView unselect];
+            
+            _selectedTableView = (DiningTableView *)subview;
+            [_selectedTableView select];
+        }
     }
+}
+
+-(void)handlePan:(UIPanGestureRecognizer *)recognizer {
+#if 0
+    //if we only use one pan gesture recognizer for all table views
+    //get panned child view
+    UIView* view = recognizer.view;
+    CGPoint loc = [recognizer locationInView:view];
+    UIView* subview = [view hitTest:loc withEvent:nil];
+    NSLog(@"subview id - %ld", subview.tag);
+    
+    if(subview != nil && subview != self.view) {
+        CGPoint translation = [recognizer translationInView:self.view];
+        subview.center = CGPointMake(subview.center.x + translation.x, subview.center.y + translation.y);
+        [recognizer setTranslation:CGPointMake(0, 0) inView:subview];
+    }
+#else
+    //if we create a pan gesture recognizer for each table view
+    CGPoint translation = [recognizer translationInView:self.view];
+    recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x,
+                                         recognizer.view.center.y + translation.y);
+    [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
+
+#endif
 }
 
 -(void)addTable:(DiningTable *)table {
@@ -102,11 +126,20 @@
     }
     
     DiningTableView *tableView = [[DiningTableView alloc] initWithTable:table];
+    
+    //add a pan gesture recognizer for each table view.
+    UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+    [panRecognizer setMinimumNumberOfTouches:1];
+    [panRecognizer setMaximumNumberOfTouches:1];
+    [tableView addGestureRecognizer:panRecognizer];
+    
+    //set a default frame for now
     tableView.frame = CGRectMake(startX, startY, kTableDefaultWidth, kTableDefaultHeight);
     
     //add table view to room view
     [self.view addSubview:tableView];
-    [_tableViews addObject:table];
+    [_tableViews addObject:tableView];
+    [tableView setTag:_tableViews.count-1];
     
     //add table to room
     [_room addTable:table];
