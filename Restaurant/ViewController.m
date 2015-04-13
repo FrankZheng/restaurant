@@ -8,13 +8,14 @@
 
 #import "ViewController.h"
 #import "RoomViewController.h"
+#import "Model.h"
 
 
 @interface ViewController ()
 @property(nonatomic, strong) RoomPickerController *roomPicker;
-@property(nonatomic, strong) NSMutableArray *rooms;
 @property(nonatomic, strong) UIPopoverController *roomPickerPopover;
 @property(nonatomic, strong) RoomViewController *roomViewController;
+@property(nonatomic, weak) Model *model;
 
 @end
 
@@ -22,13 +23,35 @@
 
 
 -(void)setup {
-    _rooms = [[NSMutableArray alloc] init];
+    _model = [Model shareInstance];
+}
+
+-(void)setupViews {
+    NSArray *rooms = [_model getRooms];
+    if(rooms.count > 0) {
+        //load the first room by default
+        [self setupRoomViewController:[rooms objectAtIndex:0]];
+    } else {
+        //hide the pick room button
+        [_btnPickRoom setHidden:YES];
+    }
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self setup];
+}
+
+#if 0
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+#endif
+
+-(void)viewDidLayoutSubviews {
+    [self setupViews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,17 +66,6 @@
     table.type = (count++ % 2) ? TableTypeSquare : TableTypeRound;
     
     [_roomViewController addTable:table];
-}
-
-- (void)handlePan:(UIPanGestureRecognizer *)recognizer {
-    NSLog(@"handlePan, %ld", recognizer.state);
-#if 0
-    
-    CGPoint translation = [recognizer translationInView:self.roomView];
-    recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x,
-                                         recognizer.view.center.y + translation.y);
-    [recognizer setTranslation:CGPointMake(0, 0) inView:self.roomView];
-#endif
 }
 
 - (void)addRoom:(id)sender {
@@ -71,12 +83,31 @@
     if([title length] > 0) {
         Room *room = [[Room alloc] init];
         room.name = title;
-        [_rooms addObject:room];
+        
+        [_model addRoom:room];
+        
+        [self setupRoomViewController:room];
     }
 }
 
+- (void)setupRoomViewController:(Room *)room {
+    
+    if( _roomViewController == nil) {
+        //Create the room view and add it into current view
+        _roomViewController = [[RoomViewController alloc] initWithFrame:_roomViewPlaceHolder.frame];
+        [self.view addSubview:_roomViewController.view];
+    }
+    
+    if(_roomViewController.room != room) {
+        [_roomViewController loadRoom:room];
+    }
+    
+    //set the btn text
+    [_btnPickRoom setHidden:NO];
+    [_btnPickRoom setTitle:room.name forState:UIControlStateNormal];
+}
+
 - (IBAction)pickRoom:(id)sender {
-    if(_rooms == nil) return;
     
     if(_roomPicker == nil) {
         _roomPicker = [[RoomPickerController alloc] initWithStyle:UITableViewStylePlain];
@@ -84,8 +115,8 @@
     }
     
     if (_roomPickerPopover == nil) {
-        NSArray* copyRooms = [_rooms copy];
-        [_roomPicker setRooms:copyRooms];
+        
+        [_roomPicker setRooms:[_model getRooms]];
         
         _roomPickerPopover = [[UIPopoverController alloc] initWithContentViewController:_roomPicker];
         _roomPickerPopover.delegate = self;
@@ -99,8 +130,6 @@
 }
 
 -(void)selectedRoom:(Room *)room {
-    //set the btn text
-    [_btnPickRoom setTitle:room.name forState:UIControlStateNormal];
     
     //Dismiss the popover if it's showing.
     if (_roomPickerPopover) {
@@ -108,15 +137,8 @@
         _roomPickerPopover = nil;
     }
     
-    if( _roomViewController == nil) {
-        //Create the room view and add it into current view
-        _roomViewController = [[RoomViewController alloc] initWithFrame:_roomViewPlaceHolder.frame];
-        [self.view addSubview:_roomViewController.view];
-    }
+    [self setupRoomViewController:room];
     
-    if(_roomViewController.room != room) {
-        [_roomViewController loadRoom:room];
-    }
 }
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {

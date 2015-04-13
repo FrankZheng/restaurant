@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3521B881ADBAB6A00AC9502 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = D3521B871ADBAB6A00AC9502 /* Model.m */; };
 		F65668D51AD8DF990054F48F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F65668D41AD8DF990054F48F /* main.m */; };
 		F65668D81AD8DF990054F48F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F65668D71AD8DF990054F48F /* AppDelegate.m */; };
 		F65668DB1AD8DF990054F48F /* Restaurant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F65668D91AD8DF990054F48F /* Restaurant.xcdatamodeld */; };
@@ -16,7 +17,6 @@
 		F65668E61AD8DF990054F48F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65668E41AD8DF990054F48F /* LaunchScreen.xib */; };
 		F65668F21AD8DF990054F48F /* RestaurantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F65668F11AD8DF990054F48F /* RestaurantTests.m */; };
 		F65668FD1AD8E2040054F48F /* DiningTable.m in Sources */ = {isa = PBXBuildFile; fileRef = F65668FC1AD8E2040054F48F /* DiningTable.m */; };
-		F65668FF1AD8E57F0054F48F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65668FE1AD8E57F0054F48F /* CoreGraphics.framework */; };
 		F65669021AD8E7240054F48F /* DiningTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F65669011AD8E7240054F48F /* DiningTableView.m */; };
 		F65669051AD8E7640054F48F /* LogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F65669041AD8E7640054F48F /* LogUtil.m */; };
 		F65669081AD8EFD40054F48F /* RoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = F65669071AD8EFD40054F48F /* RoomView.m */; };
@@ -37,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D3521B861ADBAB6A00AC9502 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		D3521B871ADBAB6A00AC9502 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		F65668CF1AD8DF990054F48F /* Restaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65668D31AD8DF990054F48F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F65668D41AD8DF990054F48F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,7 +55,6 @@
 		F65668F11AD8DF990054F48F /* RestaurantTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantTests.m; sourceTree = "<group>"; };
 		F65668FB1AD8E2040054F48F /* DiningTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiningTable.h; sourceTree = "<group>"; };
 		F65668FC1AD8E2040054F48F /* DiningTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiningTable.m; sourceTree = "<group>"; };
-		F65668FE1AD8E57F0054F48F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F65669001AD8E7240054F48F /* DiningTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiningTableView.h; sourceTree = "<group>"; };
 		F65669011AD8E7240054F48F /* DiningTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiningTableView.m; sourceTree = "<group>"; };
 		F65669031AD8E7640054F48F /* LogUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogUtil.h; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F65668FF1AD8E57F0054F48F /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +92,6 @@
 		F65668C61AD8DF990054F48F = {
 			isa = PBXGroup;
 			children = (
-				F65668FE1AD8E57F0054F48F /* CoreGraphics.framework */,
 				F65668D11AD8DF990054F48F /* Restaurant */,
 				F65668EE1AD8DF990054F48F /* RestaurantTests */,
 				F65668D01AD8DF990054F48F /* Products */,
@@ -136,6 +135,8 @@
 				F65669101ADA17320054F48F /* Room.m */,
 				F65669121ADA77670054F48F /* RoomViewController.h */,
 				F65669131ADA77670054F48F /* RoomViewController.m */,
+				D3521B861ADBAB6A00AC9502 /* Model.h */,
+				D3521B871ADBAB6A00AC9502 /* Model.m */,
 			);
 			path = Restaurant;
 			sourceTree = "<group>";
@@ -277,6 +278,7 @@
 				F65668FD1AD8E2040054F48F /* DiningTable.m in Sources */,
 				F65669081AD8EFD40054F48F /* RoomView.m in Sources */,
 				F65669051AD8E7640054F48F /* LogUtil.m in Sources */,
+				D3521B881ADBAB6A00AC9502 /* Model.m in Sources */,
 				F65668DB1AD8DF990054F48F /* Restaurant.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

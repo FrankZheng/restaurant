@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DiningTable.h"
 
-@interface Room : NSObject
+@interface Room : NSObject <NSCoding>
 
 
 @property(nonatomic, strong) NSString *name;

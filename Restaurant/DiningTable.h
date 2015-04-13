@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 Frank Zheng. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
+#import <UIKit/UIKit.h>
+
 
 
 
@@ -17,11 +17,11 @@ typedef NS_ENUM(NSInteger, TableType)
     TableTypeRound = 1
 };
 
-@interface DiningTable : NSObject
+@interface DiningTable : NSObject <NSCoding>
 
 @property(nonatomic, assign) NSInteger number;
 @property(nonatomic, assign) TableType type;
-@property(nonatomic, assign) CGPoint postion;
+@property(nonatomic, assign) CGRect rect;
 @property(nonatomic, assign) NSInteger seats;
 @property(nonatomic, assign) CGFloat sizeRatio;
 

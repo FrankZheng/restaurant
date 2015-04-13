@@ -8,6 +8,9 @@
 
 #import "Room.h"
 
+#define kName @"name"
+#define kTables @"tables"
+
 @interface Room()
 @property(nonatomic, strong, readwrite) NSMutableArray *tables;
 
@@ -35,6 +38,22 @@
 -(NSArray*)getTables {
     return [_tables copy];
 }
+
+
+//persistence
+-(instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if(self = [super init]) {
+        _name = [aDecoder decodeObjectForKey:kName];
+        _tables = [aDecoder decodeObjectForKey:kTables];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:_name forKey:kName];
+    [encoder encodeObject:_tables forKey:kTables];
+}
+
 
 
 @end
