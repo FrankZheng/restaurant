@@ -7,25 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "DiningTableView.h"
 #import "RoomViewController.h"
 
 
-
-#define kPadding 10.0f
-#define kTableDefaultWidth  60.0f
-#define kTableDefaultHeight 60.0f
-#define kTableXSpacing 20.0f
-#define kTableYSpacing 20.0f
-
-
-
 @interface ViewController ()
-@property(nonatomic, assign) BOOL roomHasNoSpace;
-@property(nonatomic, strong) NSMutableArray *tableViews;
-@property(nonatomic, strong) DiningTableView *selectedTable;
-@property(nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
-@property(nonatomic, strong) UIPanGestureRecognizer *panRecognizer;
 @property(nonatomic, strong) RoomPickerController *roomPicker;
 @property(nonatomic, strong) NSMutableArray *rooms;
 @property(nonatomic, strong) UIPopoverController *roomPickerPopover;
@@ -37,13 +22,6 @@
 
 
 -(void)setup {
-    _tableViews = [[NSMutableArray alloc] init];
-    // Create and initialize a tap gesture
-    _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-    _tapRecognizer.numberOfTapsRequired = 1;
-    
-    _panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
-    
     _rooms = [[NSMutableArray alloc] init];
 }
 
@@ -65,18 +43,6 @@
     table.type = (count++ % 2) ? TableTypeSquare : TableTypeRound;
     
     [_roomViewController addTable:table];
-}
-
--(void)handleTap:(UITapGestureRecognizer*)sender {
-    if (sender.state == UIGestureRecognizerStateEnded)
-    {
-        NSLog(@"tapped, %ld", sender.view.tag);
-        if(sender.view != _selectedTable) {
-            [_selectedTable unselect];
-            _selectedTable = (DiningTableView *)sender.view;
-            [_selectedTable select];
-        }
-    }
 }
 
 - (void)handlePan:(UIPanGestureRecognizer *)recognizer {

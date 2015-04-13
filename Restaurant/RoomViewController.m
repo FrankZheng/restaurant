@@ -20,6 +20,8 @@
 
 @property(nonatomic, assign) CGRect frame;
 @property(nonatomic, strong) NSMutableArray *tableViews;
+@property(nonatomic, strong) DiningTableView *selectedTableView;
+@property(nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
 
 @end
 
@@ -28,19 +30,33 @@
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super init]) {
         _frame = frame;
-        _tableViews = [[NSMutableArray alloc] init];
+        
+        [self setup];
+        
     }
     return self;
 }
 
+-(void)setup {
+    _tableViews = [[NSMutableArray alloc] init];
+    _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    _tapRecognizer.numberOfTapsRequired = 1;
+    
+}
+
 -(void)loadView {
     self.view = [[RoomView alloc] initWithFrame:_frame];
+    
+    //setup the view properties
     self.view.backgroundColor  = [UIColor blackColor];
+    [self.view addGestureRecognizer:_tapRecognizer];
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,6 +67,22 @@
 -(void)loadRoom:(Room *)room {
     self.room = room;
     //load the tables from room, and create tableviews, and load the table views 
+}
+
+-(void)handleTap:(UITapGestureRecognizer *)recognizer {
+    
+    //get tapped child view
+    UIView* view = recognizer.view;
+    CGPoint loc = [recognizer locationInView:view];
+    UIView* subview = [view hitTest:loc withEvent:nil];
+    
+    if([subview isKindOfClass:[DiningTableView class]]) {
+        //clear the current selection
+        [_selectedTableView unselect];
+        
+        _selectedTableView = (DiningTableView *)subview;
+        [_selectedTableView select];
+    }
 }
 
 -(void)addTable:(DiningTable *)table {
