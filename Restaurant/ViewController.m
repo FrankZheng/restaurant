@@ -59,43 +59,12 @@
 }
 
 -(IBAction)addTable:(id)sender {
+    static int count = 0;
     
-#if 0
-    NSLog(@"roomView, %@", NSStringFromCGRect(self.roomView.frame));
+    DiningTable *table = [[DiningTable alloc] init];
+    table.type = (count++ % 2) ? TableTypeSquare : TableTypeRound;
     
-    static CGFloat startX = kPadding;
-    static CGFloat startY = kPadding;
-    
-    
-    CGFloat maxWidth = CGRectGetWidth(self.roomView.frame);
-    CGFloat maxHeight = CGRectGetHeight(self.roomView.frame);
-    
-    if(startX + kTableXSpacing + kTableDefaultWidth > maxWidth) {
-        //no space for new table
-        return;
-    }
-    
-    DiningTableView *table = [[DiningTableView alloc] init];
-    table.frame = CGRectMake(startX, startY, kTableDefaultWidth, kTableDefaultHeight);
-    table.tableType = _tableViews.count % 2 == 0 ? TableTypeSquare : TableTypeRound;
-    
-    // Add the tap gesture recognizer to the view
-    [table addGestureRecognizer:_tapRecognizer];
-    [table addGestureRecognizer:_panRecognizer];
-    
-    
-    [self.roomView addSubview:table];
-    [_tableViews addObject:table];
-    [table setTag:_tableViews.count-1];
-    
-    if(startY + kTableYSpacing + kTableDefaultHeight > maxHeight) {
-        //no space to put table vertically, move to another column
-        startX += kTableXSpacing + kTableDefaultWidth;
-        startY = kPadding;
-    } else {
-        startY += kTableYSpacing + kTableDefaultHeight;
-    }
-#endif
+    [_roomViewController addTable:table];
 }
 
 -(void)handleTap:(UITapGestureRecognizer*)sender {

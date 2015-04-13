@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DiningTable.h"
 
 @interface Room : NSObject
 
 
 @property(nonatomic, strong) NSString *name;
-@property(nonatomic, strong) NSMutableArray *tables;
+
+-(void)addTable:(DiningTable *)table;
+-(NSArray*)getTables;
 
 @end

@@ -8,10 +8,18 @@
 
 #import "RoomViewController.h"
 #import "RoomView.h"
+#import "DiningTableView.h"
+
+#define kPadding 10.0f
+#define kTableDefaultWidth  60.0f
+#define kTableDefaultHeight 60.0f
+#define kTableXSpacing 20.0f
+#define kTableYSpacing 20.0f
 
 @interface RoomViewController()
 
 @property(nonatomic, assign) CGRect frame;
+@property(nonatomic, strong) NSMutableArray *tableViews;
 
 @end
 
@@ -20,6 +28,7 @@
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super init]) {
         _frame = frame;
+        _tableViews = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -46,7 +55,38 @@
 
 -(void)addTable:(DiningTable *)table {
     //add a new table
-    //create a table view if necessary
+    NSLog(@"roomView, %@", NSStringFromCGRect(self.view.frame));
+    
+    static CGFloat startX = kPadding;
+    static CGFloat startY = kPadding;
+    
+    
+    CGFloat maxWidth = CGRectGetWidth(self.view.frame);
+    CGFloat maxHeight = CGRectGetHeight(self.view.frame);
+    
+    if(startX + kTableXSpacing + kTableDefaultWidth > maxWidth) {
+        //no space for new table
+        return;
+    }
+    
+    DiningTableView *tableView = [[DiningTableView alloc] initWithTable:table];
+    tableView.frame = CGRectMake(startX, startY, kTableDefaultWidth, kTableDefaultHeight);
+    
+    //add table view to room view
+    [self.view addSubview:tableView];
+    [_tableViews addObject:table];
+    
+    //add table to room
+    [_room addTable:table];
+    
+    if(startY + kTableYSpacing + kTableDefaultHeight > maxHeight) {
+        //no space to put table vertically, move to another column
+        startX += kTableXSpacing + kTableDefaultWidth;
+        startY = kPadding;
+    } else {
+        startY += kTableYSpacing + kTableDefaultHeight;
+    }
+
 }
 
 @end
