@@ -27,6 +27,11 @@
 }
 
 -(void)setupViews {
+    //make sure only setup once
+    static BOOL setuped = NO;
+    if(setuped) return;
+    setuped = YES;
+    
     NSArray *rooms = [_model getRooms];
     if(rooms.count > 0) {
         //load the first room by default

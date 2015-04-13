@@ -22,13 +22,15 @@
 
 -(instancetype)init {
     if(self = [super init]) {
-        
+        [self setup];
     }
     return self;
 }
 
 -(void)setup {
-    _tables = [[NSMutableArray alloc] init];
+    if(_tables == nil) {
+        _tables = [[NSMutableArray alloc] init];
+    }
 }
 
 -(void)addTable:(DiningTable *)table {
@@ -45,6 +47,8 @@
     if(self = [super init]) {
         _name = [aDecoder decodeObjectForKey:kName];
         _tables = [aDecoder decodeObjectForKey:kTables];
+        
+        [self setup];
     }
     return self;
 }
@@ -54,6 +58,13 @@
     [encoder encodeObject:_tables forKey:kTables];
 }
 
+-(NSUInteger)getTablesCount {
+    return _tables.count;
+}
+
+-(BOOL)hasTheTable:(DiningTable *)table {
+    return [_tables indexOfObject:table] != NSNotFound;
+}
 
 
 @end

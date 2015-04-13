@@ -16,5 +16,8 @@
 
 -(void)addTable:(DiningTable *)table;
 -(NSArray*)getTables;
+-(NSUInteger)getTablesCount;
+-(BOOL)hasTheTable:(DiningTable *)table;
+
 
 @end
