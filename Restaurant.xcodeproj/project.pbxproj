@@ -98,6 +98,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3E4EDCA1ADDF7070085EF4A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F65668FB1AD8E2040054F48F /* DiningTable.h */,
+				F65668FC1AD8E2040054F48F /* DiningTable.m */,
+				F656690F1ADA17320054F48F /* Room.h */,
+				F65669101ADA17320054F48F /* Room.m */,
+				D3521B861ADBAB6A00AC9502 /* Model.h */,
+				D3521B871ADBAB6A00AC9502 /* Model.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		D3E4EDCB1ADDF7340085EF4A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F65669001AD8E7240054F48F /* DiningTableView.h */,
+				F65669011AD8E7240054F48F /* DiningTableView.m */,
+				F65669061AD8EFD40054F48F /* RoomView.h */,
+				F65669071AD8EFD40054F48F /* RoomView.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		D3E4EDCC1ADDF7500085EF4A /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				F656690C1ADA16E10054F48F /* RoomPickerController.h */,
+				F656690D1ADA16E10054F48F /* RoomPickerController.m */,
+				F65669121ADA77670054F48F /* RoomViewController.h */,
+				F65669131ADA77670054F48F /* RoomViewController.m */,
+				D3E4EDC11ADDF47A0085EF4A /* MyNavigationController.h */,
+				D3E4EDC21ADDF47A0085EF4A /* MyNavigationController.m */,
+				D3E4EDC71ADDF6350085EF4A /* RestaurantLayoutViewController.h */,
+				D3E4EDC81ADDF6350085EF4A /* RestaurantLayoutViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		D3E4EDCD1ADDF76C0085EF4A /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				F65669031AD8E7640054F48F /* LogUtil.h */,
+				F65669041AD8E7640054F48F /* LogUtil.m */,
+				F65669091AD94A730054F48F /* Drawer.h */,
+				F656690A1AD94A730054F48F /* Drawer.m */,
+				D3E4EDC41ADDF5290085EF4A /* Utils.h */,
+				D3E4EDC51ADDF5290085EF4A /* Utils.m */,
+			);
+			name = utility;
+			sourceTree = "<group>";
+		};
 		F65668C61AD8DF990054F48F = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +171,10 @@
 		F65668D11AD8DF990054F48F /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
+				D3E4EDCD1ADDF76C0085EF4A /* utility */,
+				D3E4EDCC1ADDF7500085EF4A /* controller */,
+				D3E4EDCB1ADDF7340085EF4A /* view */,
+				D3E4EDCA1ADDF7070085EF4A /* model */,
 				F65668D61AD8DF990054F48F /* AppDelegate.h */,
 				F65668D71AD8DF990054F48F /* AppDelegate.m */,
 				F65668DC1AD8DF990054F48F /* ViewController.h */,
@@ -128,30 +184,6 @@
 				F65668E41AD8DF990054F48F /* LaunchScreen.xib */,
 				F65668D91AD8DF990054F48F /* Restaurant.xcdatamodeld */,
 				F65668D21AD8DF990054F48F /* Supporting Files */,
-				F65668FB1AD8E2040054F48F /* DiningTable.h */,
-				F65668FC1AD8E2040054F48F /* DiningTable.m */,
-				F65669001AD8E7240054F48F /* DiningTableView.h */,
-				F65669011AD8E7240054F48F /* DiningTableView.m */,
-				F65669031AD8E7640054F48F /* LogUtil.h */,
-				F65669041AD8E7640054F48F /* LogUtil.m */,
-				F65669061AD8EFD40054F48F /* RoomView.h */,
-				F65669071AD8EFD40054F48F /* RoomView.m */,
-				F65669091AD94A730054F48F /* Drawer.h */,
-				F656690A1AD94A730054F48F /* Drawer.m */,
-				F656690C1ADA16E10054F48F /* RoomPickerController.h */,
-				F656690D1ADA16E10054F48F /* RoomPickerController.m */,
-				F656690F1ADA17320054F48F /* Room.h */,
-				F65669101ADA17320054F48F /* Room.m */,
-				F65669121ADA77670054F48F /* RoomViewController.h */,
-				F65669131ADA77670054F48F /* RoomViewController.m */,
-				D3521B861ADBAB6A00AC9502 /* Model.h */,
-				D3521B871ADBAB6A00AC9502 /* Model.m */,
-				D3E4EDC11ADDF47A0085EF4A /* MyNavigationController.h */,
-				D3E4EDC21ADDF47A0085EF4A /* MyNavigationController.m */,
-				D3E4EDC41ADDF5290085EF4A /* Utils.h */,
-				D3E4EDC51ADDF5290085EF4A /* Utils.m */,
-				D3E4EDC71ADDF6350085EF4A /* RestaurantLayoutViewController.h */,
-				D3E4EDC81ADDF6350085EF4A /* RestaurantLayoutViewController.m */,
 			);
 			path = Restaurant;
 			sourceTree = "<group>";
