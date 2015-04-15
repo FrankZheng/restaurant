@@ -15,7 +15,7 @@
 @implementation TablePropertyEditorViewController
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithNibName:@"RightToolView" bundle:nil];
+    self = [super initWithNibName:@"TablePropertyEditorView" bundle:nil];
     if(self) {
         //set the frame of view
         self.view.frame = frame;
@@ -65,7 +65,7 @@
 }
 
 - (IBAction)tableTypeChanged:(id)sender {
-    NSLog(@"table type changed, %ld", _tableTypeSegment.selectedSegmentIndex);
+    NSLog(@"table type changed, %ld", (long)_tableTypeSegment.selectedSegmentIndex);
 }
 
 - (IBAction)opposingSwitched:(id)sender {

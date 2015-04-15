@@ -11,7 +11,4 @@
 
 @interface RestaurantLayoutViewController : UIViewController
 
-
--(instancetype)initWithModel:(Model *)model;
-
 @end

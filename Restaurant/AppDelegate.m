@@ -28,7 +28,7 @@
     [[Model shareInstance] loadData];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    RestaurantLayoutViewController* viewController = [[RestaurantLayoutViewController alloc] initWithModel:[Model shareInstance]];
+    RestaurantLayoutViewController* viewController = [[RestaurantLayoutViewController alloc] init];
     self.navController = [[MyNavigationController alloc] initWithRootViewController:viewController];
     
     self.window.rootViewController = self.navController;

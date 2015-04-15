@@ -7,29 +7,18 @@
 //
 
 #import "RestaurantLayoutViewController.h"
-#import "SlideSwitchView.h"
+#import "RoomSwitchViewController.h"
 #import "TablePropertyEditorViewController.h"
 #import "RoomViewController.h"
 
 
 @interface RestaurantLayoutViewController ()
-@property(nonatomic, strong) Model* model;
-@property(nonatomic, strong) SlideSwitchView *roomSwitchView;
+@property(nonatomic, strong) RoomSwitchViewController *roomSwitchViewController;
 @property(nonatomic, strong) TablePropertyEditorViewController *tableEditorController;
-@property(nonatomic, strong) NSMutableArray *roomViewControllers;
 
 @end
 
 @implementation RestaurantLayoutViewController
-
--(instancetype)initWithModel:(Model *)model {
-    self = [super init];
-    if(self) {
-        _model = model;
-        _roomViewControllers = [[NSMutableArray alloc] init];
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,14 +34,34 @@
     //adjust the bounds to avoid the subview overlapped with navigationbar
     float NavBarHeight = self.navigationController.navigationBar.frame.size.height;
     self.view.bounds = CGRectOffset(self.view.bounds, 0, -NavBarHeight);
-    
-    
 }
 
 -(void)createSubViews {
     //left top / center is room switch view
     //left bottom is room action bar
     //right is the table editor view
+    CGFloat bottomBarHeight = 60.0f;
+    CGSize tableEditorViewSize = CGSizeMake(300, 600); //need change when xib size changed.
+    CGFloat entireWidth = CGRectGetWidth(self.view.frame);
+    CGFloat entireHeight = CGRectGetHeight(self.view.frame);
+    CGRect tableEditorViewFrame = CGRectMake(entireWidth - tableEditorViewSize.width, 0,
+                                             tableEditorViewSize.width, tableEditorViewSize.height);
+    CGFloat topPadding = 10.0f;
+    CGRect roomSwitchViewFrame = CGRectMake(0, topPadding,
+                                            entireWidth - tableEditorViewSize.width,
+                                            entireHeight - bottomBarHeight - topPadding);
+    
+    _tableEditorController = [[TablePropertyEditorViewController alloc] initWithFrame:tableEditorViewFrame];
+    _roomSwitchViewController = [[RoomSwitchViewController alloc] initWithFrame:roomSwitchViewFrame];
+    
+    [self.view addSubview:_tableEditorController.view];
+    [self.view addSubview:_roomSwitchViewController.view];
+    
+#if 0
+    [self addChildViewController:_tableEditorController];
+    [self addChildViewController:_roomSwitchViewController];
+#endif
+    
 }
 
 - (void)didReceiveMemoryWarning {
