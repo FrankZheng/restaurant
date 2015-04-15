@@ -148,7 +148,7 @@ static const NSUInteger kTagOfRightSideButton = 999;
 -(void)reloadData {
     //use a simple solution, remove all the things, then build them again.
     [_viewArray removeAllObjects];
-    [_nameButtons removeAllObjects];
+    
     
     for( UIView* view in _rootScrollView.subviews) {
         [view removeFromSuperview];
@@ -158,6 +158,7 @@ static const NSUInteger kTagOfRightSideButton = 999;
         [button removeFromSuperview];
     }
     
+    [_nameButtons removeAllObjects];
     
     [self buildUI];
 }

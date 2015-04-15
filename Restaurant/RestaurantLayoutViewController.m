@@ -46,7 +46,7 @@
     CGFloat entireHeight = CGRectGetHeight(self.view.frame);
     CGRect tableEditorViewFrame = CGRectMake(entireWidth - tableEditorViewSize.width, 0,
                                              tableEditorViewSize.width, tableEditorViewSize.height);
-    CGFloat topPadding = 10.0f;
+    CGFloat topPadding = 20.0f;
     CGRect roomSwitchViewFrame = CGRectMake(0, topPadding,
                                             entireWidth - tableEditorViewSize.width,
                                             entireHeight - bottomBarHeight - topPadding);
