@@ -8,11 +8,14 @@
 
 #import "AppDelegate.h"
 #import "Model.h"
+#import "MyNavigationController.h"
+#import "RestaurantLayoutViewController.h"
 
 
 
 
 @interface AppDelegate ()
+@property(nonatomic, strong) MyNavigationController *navController;
 
 
 @end
@@ -22,6 +25,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    RestaurantLayoutViewController* viewController = [[RestaurantLayoutViewController alloc] init];
+    self.navController = [[MyNavigationController alloc] initWithRootViewController:viewController];
+    self.window.rootViewController = self.navController;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     
     //load data
     [[Model shareInstance] loadData];

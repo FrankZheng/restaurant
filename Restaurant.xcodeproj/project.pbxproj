@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D3521B881ADBAB6A00AC9502 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = D3521B871ADBAB6A00AC9502 /* Model.m */; };
+		D3E4EDC31ADDF47A0085EF4A /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E4EDC21ADDF47A0085EF4A /* MyNavigationController.m */; };
+		D3E4EDC61ADDF5290085EF4A /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E4EDC51ADDF5290085EF4A /* Utils.m */; };
+		D3E4EDC91ADDF6350085EF4A /* RestaurantLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E4EDC81ADDF6350085EF4A /* RestaurantLayoutViewController.m */; };
 		F65668D51AD8DF990054F48F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F65668D41AD8DF990054F48F /* main.m */; };
 		F65668D81AD8DF990054F48F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F65668D71AD8DF990054F48F /* AppDelegate.m */; };
 		F65668DB1AD8DF990054F48F /* Restaurant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F65668D91AD8DF990054F48F /* Restaurant.xcdatamodeld */; };
@@ -39,6 +42,12 @@
 /* Begin PBXFileReference section */
 		D3521B861ADBAB6A00AC9502 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		D3521B871ADBAB6A00AC9502 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		D3E4EDC11ADDF47A0085EF4A /* MyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationController.h; sourceTree = "<group>"; };
+		D3E4EDC21ADDF47A0085EF4A /* MyNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationController.m; sourceTree = "<group>"; };
+		D3E4EDC41ADDF5290085EF4A /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		D3E4EDC51ADDF5290085EF4A /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		D3E4EDC71ADDF6350085EF4A /* RestaurantLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantLayoutViewController.h; sourceTree = "<group>"; };
+		D3E4EDC81ADDF6350085EF4A /* RestaurantLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantLayoutViewController.m; sourceTree = "<group>"; };
 		F65668CF1AD8DF990054F48F /* Restaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65668D31AD8DF990054F48F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F65668D41AD8DF990054F48F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -137,6 +146,12 @@
 				F65669131ADA77670054F48F /* RoomViewController.m */,
 				D3521B861ADBAB6A00AC9502 /* Model.h */,
 				D3521B871ADBAB6A00AC9502 /* Model.m */,
+				D3E4EDC11ADDF47A0085EF4A /* MyNavigationController.h */,
+				D3E4EDC21ADDF47A0085EF4A /* MyNavigationController.m */,
+				D3E4EDC41ADDF5290085EF4A /* Utils.h */,
+				D3E4EDC51ADDF5290085EF4A /* Utils.m */,
+				D3E4EDC71ADDF6350085EF4A /* RestaurantLayoutViewController.h */,
+				D3E4EDC81ADDF6350085EF4A /* RestaurantLayoutViewController.m */,
 			);
 			path = Restaurant;
 			sourceTree = "<group>";
@@ -268,7 +283,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F65669111ADA17320054F48F /* Room.m in Sources */,
+				D3E4EDC31ADDF47A0085EF4A /* MyNavigationController.m in Sources */,
+				D3E4EDC91ADDF6350085EF4A /* RestaurantLayoutViewController.m in Sources */,
 				F65668D81AD8DF990054F48F /* AppDelegate.m in Sources */,
+				D3E4EDC61ADDF5290085EF4A /* Utils.m in Sources */,
 				F65668D51AD8DF990054F48F /* main.m in Sources */,
 				F656690E1ADA16E10054F48F /* RoomPickerController.m in Sources */,
 				F656690B1AD94A730054F48F /* Drawer.m in Sources */,
