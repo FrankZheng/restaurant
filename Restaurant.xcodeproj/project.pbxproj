@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D30FC0301ADE41E500E50B09 /* TablePropertyEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D30FC02F1ADE41E500E50B09 /* TablePropertyEditorViewController.m */; };
 		D30FC0321ADE43CC00E50B09 /* TablePropertyEditorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D30FC0311ADE43CC00E50B09 /* TablePropertyEditorView.xib */; };
+		D30FC0351ADE469D00E50B09 /* SlideSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = D30FC0341ADE469D00E50B09 /* SlideSwitchView.m */; };
 		D3521B881ADBAB6A00AC9502 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = D3521B871ADBAB6A00AC9502 /* Model.m */; };
 		D3E4EDC31ADDF47A0085EF4A /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E4EDC21ADDF47A0085EF4A /* MyNavigationController.m */; };
 		D3E4EDC61ADDF5290085EF4A /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E4EDC51ADDF5290085EF4A /* Utils.m */; };
@@ -45,6 +46,8 @@
 		D30FC02E1ADE41E500E50B09 /* TablePropertyEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TablePropertyEditorViewController.h; sourceTree = "<group>"; };
 		D30FC02F1ADE41E500E50B09 /* TablePropertyEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TablePropertyEditorViewController.m; sourceTree = "<group>"; };
 		D30FC0311ADE43CC00E50B09 /* TablePropertyEditorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TablePropertyEditorView.xib; sourceTree = "<group>"; };
+		D30FC0331ADE469D00E50B09 /* SlideSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideSwitchView.h; sourceTree = "<group>"; };
+		D30FC0341ADE469D00E50B09 /* SlideSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideSwitchView.m; sourceTree = "<group>"; };
 		D3521B861ADBAB6A00AC9502 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		D3521B871ADBAB6A00AC9502 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		D3E4EDC11ADDF47A0085EF4A /* MyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationController.h; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 		D3E4EDCB1ADDF7340085EF4A /* view */ = {
 			isa = PBXGroup;
 			children = (
+				D30FC0331ADE469D00E50B09 /* SlideSwitchView.h */,
+				D30FC0341ADE469D00E50B09 /* SlideSwitchView.m */,
 				F65669001AD8E7240054F48F /* DiningTableView.h */,
 				F65669011AD8E7240054F48F /* DiningTableView.m */,
 				F65669061AD8EFD40054F48F /* RoomView.h */,
@@ -339,6 +344,7 @@
 				F65669081AD8EFD40054F48F /* RoomView.m in Sources */,
 				F65669051AD8E7640054F48F /* LogUtil.m in Sources */,
 				D3521B881ADBAB6A00AC9502 /* Model.m in Sources */,
+				D30FC0351ADE469D00E50B09 /* SlideSwitchView.m in Sources */,
 				F65668DB1AD8DF990054F48F /* Restaurant.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
