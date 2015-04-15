@@ -7,17 +7,52 @@
 //
 
 #import "RestaurantLayoutViewController.h"
+#import "SlideSwitchView.h"
+#import "TablePropertyEditorViewController.h"
+#import "RoomViewController.h"
+
 
 @interface RestaurantLayoutViewController ()
+@property(nonatomic, strong) Model* model;
+@property(nonatomic, strong) SlideSwitchView *roomSwitchView;
+@property(nonatomic, strong) TablePropertyEditorViewController *tableEditorController;
+@property(nonatomic, strong) NSMutableArray *roomViewControllers;
 
 @end
 
 @implementation RestaurantLayoutViewController
 
+-(instancetype)initWithModel:(Model *)model {
+    self = [super init];
+    if(self) {
+        _model = model;
+        _roomViewControllers = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self setup];
+    
+    [self createSubViews];
+}
+
+-(void)setup {
+    //set the title on the navigation bar
     self.title = @"Restaurant Layout";
+    //adjust the bounds to avoid the subview overlapped with navigationbar
+    float NavBarHeight = self.navigationController.navigationBar.frame.size.height;
+    self.view.bounds = CGRectOffset(self.view.bounds, 0, -NavBarHeight);
+    
+    
+}
+
+-(void)createSubViews {
+    //left top / center is room switch view
+    //left bottom is room action bar
+    //right is the table editor view
 }
 
 - (void)didReceiveMemoryWarning {

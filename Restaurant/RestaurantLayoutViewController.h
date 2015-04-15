@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Model.h"
 
 @interface RestaurantLayoutViewController : UIViewController
+
+
+-(instancetype)initWithModel:(Model *)model;
 
 @end
