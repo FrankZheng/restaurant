@@ -19,7 +19,7 @@
 
 -(NSArray *)getRooms;
 
--(void)addRoom:(Room *)room;
+-(NSInteger)addRoom:(Room *)room;
 
 
 @end

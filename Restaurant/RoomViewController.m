@@ -28,6 +28,13 @@
 
 @implementation RoomViewController
 
+-(instancetype)init {
+    if(self = [super init]) {
+        [self setup];
+    }
+    return self;
+}
+
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super init]) {
         _frame = frame;
@@ -65,6 +72,9 @@
 -(void)loadRoom:(Room *)room {
     if(_room != room) {
         _room = room;
+        
+        //set title
+        self.title = _room.name;
         //load the tables from room, and create tableviews, and load the table views
         
         for (DiningTable *table in _room.getTables) {

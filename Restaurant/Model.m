@@ -46,8 +46,9 @@
     return [_rooms copy];
 }
 
--(void)addRoom:(Room *)room {
+-(NSInteger)addRoom:(Room *)room {
     [_rooms addObject:room];
+    return _rooms.count-1;
 }
 
 

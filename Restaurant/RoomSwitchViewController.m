@@ -7,10 +7,13 @@
 //
 
 #import "RoomSwitchViewController.h"
+#import "RoomViewController.h"
+#import "Model.h"
 
 @interface RoomSwitchViewController ()
 @property(nonatomic, strong) SlideSwitchView *slideSwitchView;
 @property(nonatomic, strong) NSMutableArray *roomViewControllers;
+@property(nonatomic, strong) Model* model;
 @end
 
 @implementation RoomSwitchViewController
@@ -25,6 +28,7 @@
         _slideSwitchView.shadowImage = [[UIImage imageNamed:@"red_line_and_shadow.png"]
                                         stretchableImageWithLeftCapWidth:59.0f topCapHeight:0.0f];
         _slideSwitchView.slideSwitchViewDelegate = self;
+        //_slideSwitchView.backgroundColor = [UIColor greenColor];
         
         //setup the right side button
         UIButton *rightSideButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -35,9 +39,13 @@
         
         _slideSwitchView.rigthSideButton = rightSideButton;
         
+        // Do any additional setup after loading the view.
+        [_slideSwitchView buildUI];
+        
         self.view = _slideSwitchView;
         
         _roomViewControllers = [[NSMutableArray alloc] init];
+        _model = [Model shareInstance];
         
     }
     return self;
@@ -46,9 +54,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    [_slideSwitchView buildUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,8 +62,39 @@
 }
 
 - (IBAction)buttonClicked:(id)sender {
-    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Create a Room" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    alert.delegate = self;
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert show];
 }
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    UITextField *txtField = [alertView textFieldAtIndex:0];
+    
+    NSString *title = txtField.text;
+    
+    //create a new room
+    if([title length] > 0) {
+        [self addRoom:title];
+    }
+}
+
+- (void)addRoom:(NSString *)title {
+    
+    Room *room = [[Room alloc] init];
+    room.name = title;
+    
+    NSInteger index = [_model addRoom:room];
+    
+    RoomViewController* roomViewController = [[RoomViewController alloc] init];
+    [_roomViewControllers addObject:roomViewController];
+    [roomViewController loadRoom:room];
+    
+    [_slideSwitchView reloadData];
+    [_slideSwitchView selectTab:index];
+}
+
 
 #pragma mark - SlideSwitchViewDelegate
 - (NSUInteger)numberOfTab:(SlideSwitchView *)view {

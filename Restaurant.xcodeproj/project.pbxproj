@@ -11,6 +11,9 @@
 		D30FC0321ADE43CC00E50B09 /* TablePropertyEditorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D30FC0311ADE43CC00E50B09 /* TablePropertyEditorView.xib */; };
 		D30FC0351ADE469D00E50B09 /* SlideSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = D30FC0341ADE469D00E50B09 /* SlideSwitchView.m */; };
 		D30FC0381ADE5A9200E50B09 /* RoomSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D30FC0371ADE5A9200E50B09 /* RoomSwitchViewController.m */; };
+		D30FC03D1ADE818A00E50B09 /* icon_rightarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D30FC03A1ADE818A00E50B09 /* icon_rightarrow.png */; };
+		D30FC03E1ADE818A00E50B09 /* icon_rightarrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D30FC03B1ADE818A00E50B09 /* icon_rightarrow@2x.png */; };
+		D30FC03F1ADE818A00E50B09 /* red_line_and_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D30FC03C1ADE818A00E50B09 /* red_line_and_shadow@2x.png */; };
 		D3521B881ADBAB6A00AC9502 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = D3521B871ADBAB6A00AC9502 /* Model.m */; };
 		D3E4EDC31ADDF47A0085EF4A /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E4EDC21ADDF47A0085EF4A /* MyNavigationController.m */; };
 		D3E4EDC61ADDF5290085EF4A /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E4EDC51ADDF5290085EF4A /* Utils.m */; };
@@ -51,6 +54,9 @@
 		D30FC0341ADE469D00E50B09 /* SlideSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideSwitchView.m; sourceTree = "<group>"; };
 		D30FC0361ADE5A9200E50B09 /* RoomSwitchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomSwitchViewController.h; sourceTree = "<group>"; };
 		D30FC0371ADE5A9200E50B09 /* RoomSwitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomSwitchViewController.m; sourceTree = "<group>"; };
+		D30FC03A1ADE818A00E50B09 /* icon_rightarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_rightarrow.png; sourceTree = "<group>"; };
+		D30FC03B1ADE818A00E50B09 /* icon_rightarrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_rightarrow@2x.png"; sourceTree = "<group>"; };
+		D30FC03C1ADE818A00E50B09 /* red_line_and_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_line_and_shadow@2x.png"; sourceTree = "<group>"; };
 		D3521B861ADBAB6A00AC9502 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		D3521B871ADBAB6A00AC9502 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		D3E4EDC11ADDF47A0085EF4A /* MyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationController.h; sourceTree = "<group>"; };
@@ -112,6 +118,9 @@
 		D30FC0391ADE753C00E50B09 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				D30FC03A1ADE818A00E50B09 /* icon_rightarrow.png */,
+				D30FC03B1ADE818A00E50B09 /* icon_rightarrow@2x.png */,
+				D30FC03C1ADE818A00E50B09 /* red_line_and_shadow@2x.png */,
 			);
 			name = assets;
 			sourceTree = "<group>";
@@ -321,7 +330,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F65668E11AD8DF990054F48F /* Main.storyboard in Resources */,
+				D30FC03F1ADE818A00E50B09 /* red_line_and_shadow@2x.png in Resources */,
 				D30FC0321ADE43CC00E50B09 /* TablePropertyEditorView.xib in Resources */,
+				D30FC03E1ADE818A00E50B09 /* icon_rightarrow@2x.png in Resources */,
+				D30FC03D1ADE818A00E50B09 /* icon_rightarrow.png in Resources */,
 				F65668E61AD8DF990054F48F /* LaunchScreen.xib in Resources */,
 				F65668E31AD8DF990054F48F /* Images.xcassets in Resources */,
 			);
