@@ -21,8 +21,6 @@
 		F65668D51AD8DF990054F48F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F65668D41AD8DF990054F48F /* main.m */; };
 		F65668D81AD8DF990054F48F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F65668D71AD8DF990054F48F /* AppDelegate.m */; };
 		F65668DB1AD8DF990054F48F /* Restaurant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F65668D91AD8DF990054F48F /* Restaurant.xcdatamodeld */; };
-		F65668DE1AD8DF990054F48F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F65668DD1AD8DF990054F48F /* ViewController.m */; };
-		F65668E11AD8DF990054F48F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F65668DF1AD8DF990054F48F /* Main.storyboard */; };
 		F65668E31AD8DF990054F48F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F65668E21AD8DF990054F48F /* Images.xcassets */; };
 		F65668E61AD8DF990054F48F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65668E41AD8DF990054F48F /* LaunchScreen.xib */; };
 		F65668F21AD8DF990054F48F /* RestaurantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F65668F11AD8DF990054F48F /* RestaurantTests.m */; };
@@ -82,9 +80,6 @@
 		F65668D61AD8DF990054F48F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F65668D71AD8DF990054F48F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F65668DA1AD8DF990054F48F /* Restaurant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Restaurant.xcdatamodel; sourceTree = "<group>"; };
-		F65668DC1AD8DF990054F48F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F65668DD1AD8DF990054F48F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F65668E01AD8DF990054F48F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F65668E21AD8DF990054F48F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F65668E51AD8DF990054F48F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F65668EB1AD8DF990054F48F /* RestaurantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestaurantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,9 +244,6 @@
 				D3E4EDCA1ADDF7070085EF4A /* model */,
 				F65668D61AD8DF990054F48F /* AppDelegate.h */,
 				F65668D71AD8DF990054F48F /* AppDelegate.m */,
-				F65668DC1AD8DF990054F48F /* ViewController.h */,
-				F65668DD1AD8DF990054F48F /* ViewController.m */,
-				F65668DF1AD8DF990054F48F /* Main.storyboard */,
 				F65668E21AD8DF990054F48F /* Images.xcassets */,
 				F65668E41AD8DF990054F48F /* LaunchScreen.xib */,
 				D30FC0311ADE43CC00E50B09 /* TablePropertyEditorView.xib */,
@@ -392,7 +384,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F65668E11AD8DF990054F48F /* Main.storyboard in Resources */,
 				F6F9CF101ADF8F810011559A /* reset@2x.png in Resources */,
 				F6F9CF1A1ADF9E110011559A /* round_selected@2x.png in Resources */,
 				D30FC03F1ADE818A00E50B09 /* red_line_and_shadow@2x.png in Resources */,
@@ -433,7 +424,6 @@
 				F6F9CF2F1ADFC9580011559A /* OBLongPressDragDropGestureRecognizer.m in Sources */,
 				D30FC0301ADE41E500E50B09 /* TablePropertyEditorViewController.m in Sources */,
 				F656690B1AD94A730054F48F /* Drawer.m in Sources */,
-				F65668DE1AD8DF990054F48F /* ViewController.m in Sources */,
 				F65669021AD8E7240054F48F /* DiningTableView.m in Sources */,
 				F65669141ADA77670054F48F /* RoomViewController.m in Sources */,
 				F6F9CF2E1ADFC9580011559A /* OBDragDropManager.m in Sources */,
@@ -468,14 +458,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F65668DF1AD8DF990054F48F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F65668E01AD8DF990054F48F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F65668E41AD8DF990054F48F /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
