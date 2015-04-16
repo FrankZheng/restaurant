@@ -12,6 +12,7 @@
 @interface SlideSwitchView : UIView<UIScrollViewDelegate>
 {
     UIScrollView *_rootScrollView;                  //主视图
+    UIView *_dividerView;
     UIScrollView *_topScrollView;                   //顶部页签视图
     
     CGFloat _userContentOffsetX;

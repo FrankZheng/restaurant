@@ -7,8 +7,10 @@
 //
 
 #import "SlideSwitchView.h"
+#import "Utils.h"
 
 static const CGFloat kHeightOfTopScrollView = 100.0f;
+static const CGFloat kHeightOfDividerView = 2.0f;
 static const CGFloat kWidthOfButtonMargin = 16.0f;
 static const CGFloat kFontSizeOfTabButton = 21.0f;
 static const NSUInteger kTagOfRightSideButton = 999;
@@ -30,8 +32,13 @@ static const NSUInteger kTagOfRightSideButton = 999;
     [self addSubview:_topScrollView];
     _userSelectedChannelID = 100;
     
+    _dividerView = [[UIView alloc] initWithFrame:CGRectMake(0, kHeightOfTopScrollView, self.bounds.size.width, kHeightOfDividerView)];
+    _dividerView.backgroundColor = UIColorFromRGB(0x4a4a4a);
+    [self addSubview:_dividerView];
+                
+    
     //创建主滚动视图
-    _rootScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kHeightOfTopScrollView, self.bounds.size.width, self.bounds.size.height - kHeightOfTopScrollView)];
+    _rootScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kHeightOfTopScrollView + kHeightOfDividerView, self.bounds.size.width, self.bounds.size.height - kHeightOfTopScrollView)];
     _rootScrollView.delegate = self;
     _rootScrollView.pagingEnabled = YES;
     _rootScrollView.userInteractionEnabled = YES;
