@@ -69,8 +69,11 @@
             [_roomViewControllers addObject:roomViewController];
             [roomViewController loadRoom:room];
         }
-        
-        [_slideSwitchView buildUI];
+    }
+    
+    [_slideSwitchView buildUI];
+    
+    if(rooms.count > 0) {
         [_slideSwitchView selectTab:0]; //select the first one
     }
 }

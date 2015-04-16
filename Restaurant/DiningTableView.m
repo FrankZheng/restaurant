@@ -89,9 +89,25 @@
             [drawer strokeRect:chairRects[i] withColor:chairColor lineWidth:1.0];
         }
     }
+}
+
+-(void)drawNumber {
+    [self drawText:@(_table.number).stringValue inRect:self.bounds];
+}
+
+- (void)drawText:(NSString *)text inRect:(CGRect)textRect
+{
+    //Draw Text
+    NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
+    textStyle.alignment = NSTextAlignmentCenter;
     
+    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:12], NSForegroundColorAttributeName: UIColor.blackColor, NSParagraphStyleAttributeName: textStyle};
     
+    CGSize textSize = [text sizeWithAttributes:textFontAttributes];
+    CGPoint point = CGPointMake( textRect.origin.x + (CGRectGetWidth(textRect) - textSize.width)/2 ,
+                                textRect.origin.y + (CGRectGetHeight(textRect) - textSize.height)/2);
     
+    [text drawAtPoint: point withAttributes: textFontAttributes];
     
 }
 
@@ -101,18 +117,22 @@
     
     CGContextRef contextRef = UIGraphicsGetCurrentContext();
     
-#if 1
+#if 0
     //draw border
     [self drawBorder:contextRef];
 #endif
     
     [self drawChairs:contextRef];
     
-    if(self.tableType == TableTypeRound) {
+    if(_table.type == TableTypeRound) {
         [self drawRoundTable:contextRef];
-    } else if(self.tableType == TableTypeSquare){
+    } else if(_table.type == TableTypeSquare){
         [self drawSquareTable:contextRef];
     }
+    
+    [self drawNumber];
+    
+    
 }
 
 -(void)select {

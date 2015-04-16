@@ -26,10 +26,8 @@
 		F65668F21AD8DF990054F48F /* RestaurantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F65668F11AD8DF990054F48F /* RestaurantTests.m */; };
 		F65668FD1AD8E2040054F48F /* DiningTable.m in Sources */ = {isa = PBXBuildFile; fileRef = F65668FC1AD8E2040054F48F /* DiningTable.m */; };
 		F65669021AD8E7240054F48F /* DiningTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F65669011AD8E7240054F48F /* DiningTableView.m */; };
-		F65669051AD8E7640054F48F /* LogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F65669041AD8E7640054F48F /* LogUtil.m */; };
 		F65669081AD8EFD40054F48F /* RoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = F65669071AD8EFD40054F48F /* RoomView.m */; };
 		F656690B1AD94A730054F48F /* Drawer.m in Sources */ = {isa = PBXBuildFile; fileRef = F656690A1AD94A730054F48F /* Drawer.m */; };
-		F656690E1ADA16E10054F48F /* RoomPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F656690D1ADA16E10054F48F /* RoomPickerController.m */; };
 		F65669111ADA17320054F48F /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = F65669101ADA17320054F48F /* Room.m */; };
 		F65669141ADA77670054F48F /* RoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F65669131ADA77670054F48F /* RoomViewController.m */; };
 		F6F9CF0B1ADF6E810011559A /* icon_add_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6F9CF0A1ADF6E810011559A /* icon_add_button@2x.png */; };
@@ -89,14 +87,10 @@
 		F65668FC1AD8E2040054F48F /* DiningTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiningTable.m; sourceTree = "<group>"; };
 		F65669001AD8E7240054F48F /* DiningTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiningTableView.h; sourceTree = "<group>"; };
 		F65669011AD8E7240054F48F /* DiningTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiningTableView.m; sourceTree = "<group>"; };
-		F65669031AD8E7640054F48F /* LogUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogUtil.h; sourceTree = "<group>"; };
-		F65669041AD8E7640054F48F /* LogUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogUtil.m; sourceTree = "<group>"; };
 		F65669061AD8EFD40054F48F /* RoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomView.h; sourceTree = "<group>"; };
 		F65669071AD8EFD40054F48F /* RoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomView.m; sourceTree = "<group>"; };
 		F65669091AD94A730054F48F /* Drawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drawer.h; sourceTree = "<group>"; };
 		F656690A1AD94A730054F48F /* Drawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drawer.m; sourceTree = "<group>"; };
-		F656690C1ADA16E10054F48F /* RoomPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomPickerController.h; sourceTree = "<group>"; };
-		F656690D1ADA16E10054F48F /* RoomPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomPickerController.m; sourceTree = "<group>"; };
 		F656690F1ADA17320054F48F /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
 		F65669101ADA17320054F48F /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
 		F65669121ADA77670054F48F /* RoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomViewController.h; sourceTree = "<group>"; };
@@ -186,8 +180,6 @@
 		D3E4EDCC1ADDF7500085EF4A /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				F656690C1ADA16E10054F48F /* RoomPickerController.h */,
-				F656690D1ADA16E10054F48F /* RoomPickerController.m */,
 				F65669121ADA77670054F48F /* RoomViewController.h */,
 				F65669131ADA77670054F48F /* RoomViewController.m */,
 				D3E4EDC11ADDF47A0085EF4A /* MyNavigationController.h */,
@@ -205,8 +197,6 @@
 		D3E4EDCD1ADDF76C0085EF4A /* utility */ = {
 			isa = PBXGroup;
 			children = (
-				F65669031AD8E7640054F48F /* LogUtil.h */,
-				F65669041AD8E7640054F48F /* LogUtil.m */,
 				F65669091AD94A730054F48F /* Drawer.h */,
 				F656690A1AD94A730054F48F /* Drawer.m */,
 				D3E4EDC41ADDF5290085EF4A /* Utils.h */,
@@ -420,7 +410,6 @@
 				F6F9CF311ADFC9580011559A /* UIView+OBDropZone.m in Sources */,
 				D3E4EDC61ADDF5290085EF4A /* Utils.m in Sources */,
 				F65668D51AD8DF990054F48F /* main.m in Sources */,
-				F656690E1ADA16E10054F48F /* RoomPickerController.m in Sources */,
 				F6F9CF2F1ADFC9580011559A /* OBLongPressDragDropGestureRecognizer.m in Sources */,
 				D30FC0301ADE41E500E50B09 /* TablePropertyEditorViewController.m in Sources */,
 				F656690B1AD94A730054F48F /* Drawer.m in Sources */,
@@ -429,7 +418,6 @@
 				F6F9CF2E1ADFC9580011559A /* OBDragDropManager.m in Sources */,
 				F65668FD1AD8E2040054F48F /* DiningTable.m in Sources */,
 				F65669081AD8EFD40054F48F /* RoomView.m in Sources */,
-				F65669051AD8E7640054F48F /* LogUtil.m in Sources */,
 				D3521B881ADBAB6A00AC9502 /* Model.m in Sources */,
 				F6F9CF301ADFC9580011559A /* UIGestureRecognizer+OBDragDrop.m in Sources */,
 				F6F9CF0E1ADF82FA0011559A /* RoundButton.m in Sources */,

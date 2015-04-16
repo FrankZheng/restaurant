@@ -11,7 +11,6 @@
 
 @interface DiningTableView : UIView
 
-@property(nonatomic, assign) TableType tableType;
 @property(nonatomic, strong) DiningTable *table;
 
 -(void)select;

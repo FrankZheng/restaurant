@@ -57,7 +57,7 @@
     self.view = [[RoomView alloc] initWithFrame:_frame];
     
     //setup the view properties
-    self.view.backgroundColor  = [UIColor blackColor];
+    //self.view.backgroundColor  = [UIColor blackColor];
     [self.view addGestureRecognizer:_tapRecognizer];
 }
 
@@ -114,21 +114,9 @@
     [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
 }
 
+
+
 -(void)addTable:(DiningTable *)table {
-    //add a new table
-    NSLog(@"roomView, %@", NSStringFromCGRect(self.view.frame));
-    
-    static CGFloat startX = kPadding;
-    static CGFloat startY = kPadding;
-    
-    
-    CGFloat maxWidth = CGRectGetWidth(self.view.frame);
-    CGFloat maxHeight = CGRectGetHeight(self.view.frame);
-    
-    if(startX + kTableXSpacing + kTableDefaultWidth > maxWidth) {
-        //no space for new table
-        return;
-    }
     
     DiningTableView *tableView = [[DiningTableView alloc] initWithTable:table];
     
@@ -138,19 +126,12 @@
     [panRecognizer setMaximumNumberOfTouches:1];
     [tableView addGestureRecognizer:panRecognizer];
     
-    //set a default frame for now
-    if(CGRectEqualToRect(table.rect, CGRectZero)) {
-        tableView.frame = CGRectMake(startX, startY, kTableDefaultWidth, kTableDefaultHeight);
-        table.rect = tableView.frame;
-    } else {
-        tableView.frame = table.rect;
-    }
+    tableView.frame = table.rect;
     
     //for now, only increase the number
     if(table.number == 0) {
         table.number = [_room getTablesCount] + 1 ; //start from 1
     }
-    
     
     //add table view to room view
     [self.view addSubview:tableView];
@@ -161,32 +142,24 @@
     if(![_room hasTheTable:table]) {
         [_room addTable:table];
     }
-    
-    
-    if(startY + kTableYSpacing + kTableDefaultHeight > maxHeight) {
-        //no space to put table vertically, move to another column
-        startX += kTableXSpacing + kTableDefaultWidth;
-        startY = kPadding;
-    } else {
-        startY += kTableYSpacing + kTableDefaultHeight;
-    }
-
 }
 
 #pragma mark - drag & drop
 
 -(OBDropAction) ovumEntered:(OBOvum*)ovum inView:(UIView*)view atLocation:(CGPoint)location
 {
-    NSLog(@"entered, %@", NSStringFromCGPoint(location));
+    //NSLog(@"entered, %@", NSStringFromCGPoint(location));
     //self.view.backgroundColor = [UIColor redColor];
     return OBDropActionCopy;    // Return OBDropActionNone if view is not currently accepting this ovum
 }
 
+#if 0
 -(OBDropAction) ovumMoved:(OBOvum*)ovum inView:(UIView*)view atLocation:(CGPoint)location
 {
-    NSLog(@"moved, %@", NSStringFromCGPoint(location));
+    //NSLog(@"moved, %@", NSStringFromCGPoint(location));
     return OBDropActionMove;
 }
+#endif
 
 -(void) ovumExited:(OBOvum*)ovum inView:(UIView*)view atLocation:(CGPoint)location
 {
@@ -194,11 +167,25 @@
 }
 
 
+
 -(void) ovumDropped:(OBOvum*)ovum inView:(UIView*)view atLocation:(CGPoint)location
 {
-    NSLog(@"dropped, %@", NSStringFromCGPoint(location));
+    //NSLog(@"dropped, %@", NSStringFromCGPoint(location));
     // Handle the drop action
-    NSLog(@"dropped, %@", ovum.dataObject);
+    //NSLog(@"dropped, %@", ovum.dataObject);
+    NSString *tableType = ovum.dataObject;
+    DiningTable *table = [[DiningTable alloc] init];
+    table.rect = CGRectMake(location.x - kTableDefaultWidth/2,
+                            location.y - kTableDefaultHeight/2,
+                            kTableDefaultWidth, kTableDefaultHeight);
+    
+    if([tableType isEqualToString:@"square"]) {
+        table.type = TableTypeSquare;
+    } else if([tableType isEqualToString:@"round"]) {
+        table.type = TableTypeRound;
+    }
+    
+    [self addTable:table];
 }
 
 

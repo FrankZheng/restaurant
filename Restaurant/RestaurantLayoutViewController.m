@@ -92,7 +92,15 @@
     [_saveRoomButton setBackgroundColor:UIColorFromRGB(kSaveRoomButtonColor)];
     [_saveRoomButton setTitle:@"Save Room" forState:UIControlStateNormal];
     _saveRoomButton.center = CGPointMake(CGRectGetMidX(bottomBarFrame), CGRectGetMidY(bottomBarFrame));
+    [_saveRoomButton setTitleColor:UIColorFromRGB(0xF8F8F8) forState:UIControlStateNormal];
+    [_saveRoomButton setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
+    
+    [_saveRoomButton addTarget:self action:@selector(saveRoom:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_saveRoomButton];
+}
+
+-(IBAction)saveRoom:(id)sender {
+    [[Model shareInstance] saveData];
 }
 
 - (void)didReceiveMemoryWarning {
