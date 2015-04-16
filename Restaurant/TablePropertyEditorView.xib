@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TablePropertyEditorViewController">
             <connections>
+                <outlet property="btnRound" destination="Dpb-zf-WZw" id="v6O-if-PzN"/>
+                <outlet property="btnSquare" destination="blo-xn-mrw" id="c9W-ok-DPB"/>
                 <outlet property="opposingSwitch" destination="1Wt-vO-lTA" id="NK7-Wh-IdC"/>
                 <outlet property="tableNumberLabel" destination="zFi-dz-Xhc" id="jqK-KL-iUW"/>
                 <outlet property="tableNumberStepper" destination="w8s-zm-OIT" id="9zp-B4-uRh"/>
@@ -105,6 +107,38 @@
                     <color key="textColor" red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blo-xn-mrw">
+                    <rect key="frame" x="93" y="178" width="48" height="55"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <inset key="titleEdgeInsets" minX="-35" minY="40" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="6" minY="-20" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="square" image="square_normal.png">
+                        <color key="titleColor" red="0.29019607843137252" green="0.28235294117647058" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="square_selected.png">
+                        <color key="titleColor" red="0.95211884469999997" green="0.95211884469999997" blue="0.95211884469999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btnClicked:" destination="-1" eventType="touchUpInside" id="Q8Z-ai-Uxk"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpb-zf-WZw">
+                    <rect key="frame" x="166" y="178" width="48" height="55"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <inset key="titleEdgeInsets" minX="-35" minY="40" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="5" minY="-20" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="round" image="round_normal.png">
+                        <color key="titleColor" red="0.2901960784" green="0.28235294119999998" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="round_selected.png">
+                        <color key="titleColor" red="0.95211884469999997" green="0.95211884469999997" blue="0.95211884469999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btnClicked:" destination="-1" eventType="touchUpInside" id="Q1W-Vc-Ui2"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
@@ -117,5 +151,9 @@
     </objects>
     <resources>
         <image name="reset.png" width="16" height="15"/>
+        <image name="round_normal.png" width="30" height="30"/>
+        <image name="round_selected.png" width="30" height="30"/>
+        <image name="square_normal.png" width="30" height="30"/>
+        <image name="square_selected.png" width="30" height="30"/>
     </resources>
 </document>

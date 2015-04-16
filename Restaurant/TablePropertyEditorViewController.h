@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UIStepper *tableNumberStepper;
 @property (weak, nonatomic) IBOutlet UIStepper *tableSeatsStepper;
 @property (weak, nonatomic) IBOutlet UISlider *tableSizeSlider;
+@property (weak, nonatomic) IBOutlet UIButton *btnSquare;
+@property (weak, nonatomic) IBOutlet UIButton *btnRound;
+
 
 @property (weak, nonatomic) IBOutlet UISwitch *opposingSwitch;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tableTypeSegment;
@@ -26,6 +29,7 @@
 - (IBAction)opposingSwitched:(id)sender;
 - (IBAction)tableSizeChanged:(id)sender;
 
+- (IBAction)btnClicked:(UIButton *)sender;
 
 - (instancetype)initWithFrame:(CGRect)frame;
 @end

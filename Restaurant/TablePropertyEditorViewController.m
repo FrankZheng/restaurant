@@ -34,6 +34,8 @@
     leftBorder.backgroundColor = UIColorFromRGB(0x000000).CGColor;
     [self.view.layer addSublayer:leftBorder];
     
+    self.btnSquare.selected = YES;
+    
     _tableNumberStepper.minimumValue = 1;
     _tableNumberStepper.maximumValue = 10;
     [_tableNumberLabel setText:@(1).stringValue];
@@ -82,5 +84,19 @@
 
 - (IBAction)tableSizeChanged:(id)sender {
     NSLog(@"table size changed, %f", _tableSizeSlider.value);
+}
+
+- (IBAction)btnClicked:(UIButton *)sender {
+    NSArray *buttons = @[_btnRound, _btnSquare];
+    
+    if(!sender.selected) {
+        sender.selected = YES;
+        for( UIButton *button in buttons) {
+            if(button != sender) {
+                button.selected = NO;
+            }
+        }
+    }
+    
 }
 @end
