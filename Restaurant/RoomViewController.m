@@ -48,6 +48,9 @@
     //create tap recognizer to handle tap
     _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     _tapRecognizer.numberOfTapsRequired = 1;
+    
+    self.view.dropZoneHandler = self;
+    //self.view.backgroundColor = [UIColor yellowColor];
 }
 
 -(void)loadView {
@@ -103,28 +106,12 @@
 }
 
 -(void)handlePan:(UIPanGestureRecognizer *)recognizer {
-#if 0
-    //if we only use one pan gesture recognizer for all table views
-    //get panned child view
-    UIView* view = recognizer.view;
-    CGPoint loc = [recognizer locationInView:view];
-    UIView* subview = [view hitTest:loc withEvent:nil];
-    NSLog(@"subview id - %ld", subview.tag);
-    
-    if(subview != nil && subview != self.view) {
-        CGPoint translation = [recognizer translationInView:self.view];
-        subview.center = CGPointMake(subview.center.x + translation.x, subview.center.y + translation.y);
-        [recognizer setTranslation:CGPointMake(0, 0) inView:subview];
-    }
-#else
     [self.view bringSubviewToFront:recognizer.view];
     //if we create a pan gesture recognizer for each table view
     CGPoint translation = [recognizer translationInView:self.view];
     recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x,
                                          recognizer.view.center.y + translation.y);
     [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
-
-#endif
 }
 
 -(void)addTable:(DiningTable *)table {
@@ -185,5 +172,34 @@
     }
 
 }
+
+#pragma mark - drag & drop
+
+-(OBDropAction) ovumEntered:(OBOvum*)ovum inView:(UIView*)view atLocation:(CGPoint)location
+{
+    NSLog(@"entered, %@", NSStringFromCGPoint(location));
+    //self.view.backgroundColor = [UIColor redColor];
+    return OBDropActionCopy;    // Return OBDropActionNone if view is not currently accepting this ovum
+}
+
+-(OBDropAction) ovumMoved:(OBOvum*)ovum inView:(UIView*)view atLocation:(CGPoint)location
+{
+    NSLog(@"moved, %@", NSStringFromCGPoint(location));
+    return OBDropActionMove;
+}
+
+-(void) ovumExited:(OBOvum*)ovum inView:(UIView*)view atLocation:(CGPoint)location
+{
+    //self.view.backgroundColor = [UIColor clearColor];
+}
+
+
+-(void) ovumDropped:(OBOvum*)ovum inView:(UIView*)view atLocation:(CGPoint)location
+{
+    NSLog(@"dropped, %@", NSStringFromCGPoint(location));
+    // Handle the drop action
+    NSLog(@"dropped, %@", ovum.dataObject);
+}
+
 
 @end

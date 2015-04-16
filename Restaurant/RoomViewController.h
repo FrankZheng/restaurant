@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Room.h"
 #import "DiningTable.h"
+#import "OBDragDrop.h"
 
-@interface RoomViewController : UIViewController
+
+@interface RoomViewController : UIViewController<OBDropZone>
 
 @property(nonatomic, strong) Room *room;
 

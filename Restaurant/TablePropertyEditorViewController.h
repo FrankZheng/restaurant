@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OBDragDropManager.h"
 
-@interface TablePropertyEditorViewController : UIViewController
+@interface TablePropertyEditorViewController : UIViewController<OBOvumSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *tableNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tableSeatsLabel;
