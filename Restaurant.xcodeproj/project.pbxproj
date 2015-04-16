@@ -41,6 +41,10 @@
 		F6F9CF161ADF94190011559A /* square_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6F9CF141ADF94190011559A /* square_selected@2x.png */; };
 		F6F9CF181ADF9D4D0011559A /* round_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6F9CF171ADF9D4D0011559A /* round_normal@2x.png */; };
 		F6F9CF1A1ADF9E110011559A /* round_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6F9CF191ADF9E110011559A /* round_selected@2x.png */; };
+		F6F9CF2E1ADFC9580011559A /* OBDragDropManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F9CF261ADFC9580011559A /* OBDragDropManager.m */; };
+		F6F9CF2F1ADFC9580011559A /* OBLongPressDragDropGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F9CF291ADFC9580011559A /* OBLongPressDragDropGestureRecognizer.m */; };
+		F6F9CF301ADFC9580011559A /* UIGestureRecognizer+OBDragDrop.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F9CF2B1ADFC9580011559A /* UIGestureRecognizer+OBDragDrop.m */; };
+		F6F9CF311ADFC9580011559A /* UIView+OBDropZone.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F9CF2D1ADFC9580011559A /* UIView+OBDropZone.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +114,16 @@
 		F6F9CF141ADF94190011559A /* square_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "square_selected@2x.png"; sourceTree = "<group>"; };
 		F6F9CF171ADF9D4D0011559A /* round_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "round_normal@2x.png"; sourceTree = "<group>"; };
 		F6F9CF191ADF9E110011559A /* round_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "round_selected@2x.png"; sourceTree = "<group>"; };
+		F6F9CF241ADFC9580011559A /* OBDragDrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBDragDrop.h; sourceTree = "<group>"; };
+		F6F9CF251ADFC9580011559A /* OBDragDropManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBDragDropManager.h; sourceTree = "<group>"; };
+		F6F9CF261ADFC9580011559A /* OBDragDropManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBDragDropManager.m; sourceTree = "<group>"; };
+		F6F9CF271ADFC9580011559A /* OBDragDropProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBDragDropProtocol.h; sourceTree = "<group>"; };
+		F6F9CF281ADFC9580011559A /* OBLongPressDragDropGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBLongPressDragDropGestureRecognizer.h; sourceTree = "<group>"; };
+		F6F9CF291ADFC9580011559A /* OBLongPressDragDropGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBLongPressDragDropGestureRecognizer.m; sourceTree = "<group>"; };
+		F6F9CF2A1ADFC9580011559A /* UIGestureRecognizer+OBDragDrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+OBDragDrop.h"; sourceTree = "<group>"; };
+		F6F9CF2B1ADFC9580011559A /* UIGestureRecognizer+OBDragDrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+OBDragDrop.m"; sourceTree = "<group>"; };
+		F6F9CF2C1ADFC9580011559A /* UIView+OBDropZone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+OBDropZone.h"; sourceTree = "<group>"; };
+		F6F9CF2D1ADFC9580011559A /* UIView+OBDropZone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+OBDropZone.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +241,7 @@
 		F65668D11AD8DF990054F48F /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
+				F6F9CF1B1ADFC7040011559A /* thirdparty */,
 				D30FC0391ADE753C00E50B09 /* assets */,
 				D3E4EDCD1ADDF76C0085EF4A /* utility */,
 				D3E4EDCC1ADDF7500085EF4A /* controller */,
@@ -270,6 +285,31 @@
 				F65668F01AD8DF990054F48F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F6F9CF1B1ADFC7040011559A /* thirdparty */ = {
+			isa = PBXGroup;
+			children = (
+				F6F9CF211ADFC91A0011559A /* OBDragDrop */,
+			);
+			name = thirdparty;
+			sourceTree = "<group>";
+		};
+		F6F9CF211ADFC91A0011559A /* OBDragDrop */ = {
+			isa = PBXGroup;
+			children = (
+				F6F9CF241ADFC9580011559A /* OBDragDrop.h */,
+				F6F9CF251ADFC9580011559A /* OBDragDropManager.h */,
+				F6F9CF261ADFC9580011559A /* OBDragDropManager.m */,
+				F6F9CF271ADFC9580011559A /* OBDragDropProtocol.h */,
+				F6F9CF281ADFC9580011559A /* OBLongPressDragDropGestureRecognizer.h */,
+				F6F9CF291ADFC9580011559A /* OBLongPressDragDropGestureRecognizer.m */,
+				F6F9CF2A1ADFC9580011559A /* UIGestureRecognizer+OBDragDrop.h */,
+				F6F9CF2B1ADFC9580011559A /* UIGestureRecognizer+OBDragDrop.m */,
+				F6F9CF2C1ADFC9580011559A /* UIView+OBDropZone.h */,
+				F6F9CF2D1ADFC9580011559A /* UIView+OBDropZone.m */,
+			);
+			name = OBDragDrop;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,18 +426,22 @@
 				D3E4EDC31ADDF47A0085EF4A /* MyNavigationController.m in Sources */,
 				D3E4EDC91ADDF6350085EF4A /* RestaurantLayoutViewController.m in Sources */,
 				F65668D81AD8DF990054F48F /* AppDelegate.m in Sources */,
+				F6F9CF311ADFC9580011559A /* UIView+OBDropZone.m in Sources */,
 				D3E4EDC61ADDF5290085EF4A /* Utils.m in Sources */,
 				F65668D51AD8DF990054F48F /* main.m in Sources */,
 				F656690E1ADA16E10054F48F /* RoomPickerController.m in Sources */,
+				F6F9CF2F1ADFC9580011559A /* OBLongPressDragDropGestureRecognizer.m in Sources */,
 				D30FC0301ADE41E500E50B09 /* TablePropertyEditorViewController.m in Sources */,
 				F656690B1AD94A730054F48F /* Drawer.m in Sources */,
 				F65668DE1AD8DF990054F48F /* ViewController.m in Sources */,
 				F65669021AD8E7240054F48F /* DiningTableView.m in Sources */,
 				F65669141ADA77670054F48F /* RoomViewController.m in Sources */,
+				F6F9CF2E1ADFC9580011559A /* OBDragDropManager.m in Sources */,
 				F65668FD1AD8E2040054F48F /* DiningTable.m in Sources */,
 				F65669081AD8EFD40054F48F /* RoomView.m in Sources */,
 				F65669051AD8E7640054F48F /* LogUtil.m in Sources */,
 				D3521B881ADBAB6A00AC9502 /* Model.m in Sources */,
+				F6F9CF301ADFC9580011559A /* UIGestureRecognizer+OBDragDrop.m in Sources */,
 				F6F9CF0E1ADF82FA0011559A /* RoundButton.m in Sources */,
 				D30FC0381ADE5A9200E50B09 /* RoomSwitchViewController.m in Sources */,
 				D30FC0351ADE469D00E50B09 /* SlideSwitchView.m in Sources */,

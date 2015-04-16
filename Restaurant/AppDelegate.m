@@ -10,6 +10,7 @@
 #import "Model.h"
 #import "MyNavigationController.h"
 #import "RestaurantLayoutViewController.h"
+#import "OBDragDropManager.h"
 
 
 @interface AppDelegate ()
@@ -34,6 +35,10 @@
     self.window.rootViewController = self.navController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    //initialize drag & drop
+    OBDragDropManager *manager = [OBDragDropManager sharedManager];
+    [manager prepareOverlayWindowUsingMainWindow:self.window];
     
     return YES;
 }
