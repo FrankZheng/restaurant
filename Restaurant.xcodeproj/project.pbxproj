@@ -34,6 +34,7 @@
 		F656690E1ADA16E10054F48F /* RoomPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F656690D1ADA16E10054F48F /* RoomPickerController.m */; };
 		F65669111ADA17320054F48F /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = F65669101ADA17320054F48F /* Room.m */; };
 		F65669141ADA77670054F48F /* RoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F65669131ADA77670054F48F /* RoomViewController.m */; };
+		F6F9CF0B1ADF6E810011559A /* icon_add_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6F9CF0A1ADF6E810011559A /* icon_add_button@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		F65669101ADA17320054F48F /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
 		F65669121ADA77670054F48F /* RoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomViewController.h; sourceTree = "<group>"; };
 		F65669131ADA77670054F48F /* RoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomViewController.m; sourceTree = "<group>"; };
+		F6F9CF0A1ADF6E810011559A /* icon_add_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_add_button@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		D30FC0391ADE753C00E50B09 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				F6F9CF0A1ADF6E810011559A /* icon_add_button@2x.png */,
 				D30FC03A1ADE818A00E50B09 /* icon_rightarrow.png */,
 				D30FC03B1ADE818A00E50B09 /* icon_rightarrow@2x.png */,
 				D30FC03C1ADE818A00E50B09 /* red_line_and_shadow@2x.png */,
@@ -336,6 +339,7 @@
 				D30FC03D1ADE818A00E50B09 /* icon_rightarrow.png in Resources */,
 				F65668E61AD8DF990054F48F /* LaunchScreen.xib in Resources */,
 				F65668E31AD8DF990054F48F /* Images.xcassets in Resources */,
+				F6F9CF0B1ADF6E810011559A /* icon_add_button@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

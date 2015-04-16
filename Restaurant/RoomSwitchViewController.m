@@ -9,6 +9,7 @@
 #import "RoomSwitchViewController.h"
 #import "RoomViewController.h"
 #import "Model.h"
+#import "Utils.h"
 
 @interface RoomSwitchViewController ()
 @property(nonatomic, strong) SlideSwitchView *slideSwitchView;
@@ -23,8 +24,8 @@
     
     if(self) {
         _slideSwitchView = [[SlideSwitchView alloc] initWithFrame:frame];
-        _slideSwitchView.tabItemNormalColor = [SlideSwitchView colorFromHexRGB:@"868686"];
-        _slideSwitchView.tabItemSelectedColor = [SlideSwitchView colorFromHexRGB:@"bb0b15"];
+        _slideSwitchView.tabItemNormalColor = UIColorFromRGB(0x5f5c59);
+        _slideSwitchView.tabItemSelectedColor = UIColorFromRGB(0xffffff);
         _slideSwitchView.shadowImage = [[UIImage imageNamed:@"red_line_and_shadow.png"]
                                         stretchableImageWithLeftCapWidth:59.0f topCapHeight:0.0f];
         _slideSwitchView.slideSwitchViewDelegate = self;
@@ -32,9 +33,9 @@
         
         //setup the right side button
         UIButton *rightSideButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [rightSideButton setImage:[UIImage imageNamed:@"icon_rightarrow.png"] forState:UIControlStateNormal];
-        [rightSideButton setImage:[UIImage imageNamed:@"icon_rightarrow.png"]  forState:UIControlStateHighlighted];
-        rightSideButton.frame = CGRectMake(0, 0, 20.0f, 44.0f);
+        [rightSideButton setImage:[UIImage imageNamed:@"icon_add_button.png"] forState:UIControlStateNormal];
+        //[rightSideButton setImage:[UIImage imageNamed:@"icon_rightarrow.png"]  forState:UIControlStateHighlighted];
+        rightSideButton.frame = CGRectMake(0, 0, 42.0f, 42.0f);
         [rightSideButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
         
         _slideSwitchView.rigthSideButton = rightSideButton;

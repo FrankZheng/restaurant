@@ -10,6 +10,9 @@
 #import "RoomSwitchViewController.h"
 #import "TablePropertyEditorViewController.h"
 #import "RoomViewController.h"
+#import "Utils.h"
+
+#define kTableEditorWidth 324.0f
 
 
 @interface RestaurantLayoutViewController ()
@@ -31,22 +34,27 @@
 -(void)setup {
     //set the title on the navigation bar
     self.title = @"Restaurant Layout";
+    self.view.backgroundColor = UIColorFromRGB(0x0f0f0f);
     //adjust the bounds to avoid the subview overlapped with navigationbar
     float NavBarHeight = self.navigationController.navigationBar.frame.size.height;
-    self.view.bounds = CGRectOffset(self.view.bounds, 0, -NavBarHeight);
+    //self.view.bounds = CGRectOffset(self.view.bounds, 0, -NavBarHeight);
+    self.view.bounds = CGRectMake(0, -NavBarHeight, CGRectGetWidth(self.view.bounds),
+                                  CGRectGetHeight(self.view.bounds) - NavBarHeight);
 }
 
 -(void)createSubViews {
     //left top / center is room switch view
     //left bottom is room action bar
     //right is the table editor view
-    CGFloat bottomBarHeight = 60.0f;
-    CGSize tableEditorViewSize = CGSizeMake(300, 600); //need change when xib size changed.
-    CGFloat entireWidth = CGRectGetWidth(self.view.frame);
-    CGFloat entireHeight = CGRectGetHeight(self.view.frame);
+    CGFloat entireWidth = CGRectGetWidth(self.view.bounds);
+    CGFloat entireHeight = CGRectGetHeight(self.view.bounds);
+
+    CGFloat bottomBarHeight = 70.0f;
+    CGSize tableEditorViewSize = CGSizeMake(kTableEditorWidth, entireHeight);
+    
     CGRect tableEditorViewFrame = CGRectMake(entireWidth - tableEditorViewSize.width, 0,
                                              tableEditorViewSize.width, tableEditorViewSize.height);
-    CGFloat topPadding = 20.0f;
+    CGFloat topPadding = 0.0f;
     CGRect roomSwitchViewFrame = CGRectMake(0, topPadding,
                                             entireWidth - tableEditorViewSize.width,
                                             entireHeight - bottomBarHeight - topPadding);

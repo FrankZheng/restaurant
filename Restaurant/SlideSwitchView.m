@@ -8,9 +8,9 @@
 
 #import "SlideSwitchView.h"
 
-static const CGFloat kHeightOfTopScrollView = 44.0f;
+static const CGFloat kHeightOfTopScrollView = 100.0f;
 static const CGFloat kWidthOfButtonMargin = 16.0f;
-static const CGFloat kFontSizeOfTabButton = 17.0f;
+static const CGFloat kFontSizeOfTabButton = 21.0f;
 static const NSUInteger kTagOfRightSideButton = 999;
 
 @implementation SlideSwitchView
@@ -261,7 +261,10 @@ static const NSUInteger kTagOfRightSideButton = 999;
         
         [UIView animateWithDuration:0.25 animations:^{
             
+#if 0
+            
             [_shadowImageView setFrame:CGRectMake(sender.frame.origin.x, 0, sender.frame.size.width, _shadowImage.size.height)];
+#endif
             
         } completion:^(BOOL finished) {
             if (finished) {
