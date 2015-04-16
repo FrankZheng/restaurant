@@ -35,6 +35,7 @@
 		F65669111ADA17320054F48F /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = F65669101ADA17320054F48F /* Room.m */; };
 		F65669141ADA77670054F48F /* RoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F65669131ADA77670054F48F /* RoomViewController.m */; };
 		F6F9CF0B1ADF6E810011559A /* icon_add_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6F9CF0A1ADF6E810011559A /* icon_add_button@2x.png */; };
+		F6F9CF0E1ADF82FA0011559A /* RoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F9CF0D1ADF82FA0011559A /* RoundButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,8 @@
 		F65669121ADA77670054F48F /* RoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomViewController.h; sourceTree = "<group>"; };
 		F65669131ADA77670054F48F /* RoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomViewController.m; sourceTree = "<group>"; };
 		F6F9CF0A1ADF6E810011559A /* icon_add_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_add_button@2x.png"; sourceTree = "<group>"; };
+		F6F9CF0C1ADF82FA0011559A /* RoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundButton.h; sourceTree = "<group>"; };
+		F6F9CF0D1ADF82FA0011559A /* RoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 				F65669011AD8E7240054F48F /* DiningTableView.m */,
 				F65669061AD8EFD40054F48F /* RoomView.h */,
 				F65669071AD8EFD40054F48F /* RoomView.m */,
+				F6F9CF0C1ADF82FA0011559A /* RoundButton.h */,
+				F6F9CF0D1ADF82FA0011559A /* RoundButton.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -373,6 +378,7 @@
 				F65669081AD8EFD40054F48F /* RoomView.m in Sources */,
 				F65669051AD8E7640054F48F /* LogUtil.m in Sources */,
 				D3521B881ADBAB6A00AC9502 /* Model.m in Sources */,
+				F6F9CF0E1ADF82FA0011559A /* RoundButton.m in Sources */,
 				D30FC0381ADE5A9200E50B09 /* RoomSwitchViewController.m in Sources */,
 				D30FC0351ADE469D00E50B09 /* SlideSwitchView.m in Sources */,
 				F65668DB1AD8DF990054F48F /* Restaurant.xcdatamodeld in Sources */,

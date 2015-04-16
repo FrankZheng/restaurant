@@ -35,11 +35,10 @@
     //set the title on the navigation bar
     self.title = @"Restaurant Layout";
     self.view.backgroundColor = UIColorFromRGB(0x0f0f0f);
-    //adjust the bounds to avoid the subview overlapped with navigationbar
-    float NavBarHeight = self.navigationController.navigationBar.frame.size.height;
+    CGFloat topOffset = 64; //44 + 20
     //self.view.bounds = CGRectOffset(self.view.bounds, 0, -NavBarHeight);
-    self.view.bounds = CGRectMake(0, -NavBarHeight, CGRectGetWidth(self.view.bounds),
-                                  CGRectGetHeight(self.view.bounds) - NavBarHeight);
+    self.view.bounds = CGRectMake(0, -topOffset, CGRectGetWidth(self.view.bounds),
+                                  CGRectGetHeight(self.view.bounds) - topOffset);
 }
 
 -(void)createSubViews {
@@ -52,7 +51,7 @@
     CGFloat bottomBarHeight = 70.0f;
     CGSize tableEditorViewSize = CGSizeMake(kTableEditorWidth, entireHeight);
     
-    CGRect tableEditorViewFrame = CGRectMake(entireWidth - tableEditorViewSize.width, 0,
+    CGRect tableEditorViewFrame = CGRectMake(entireWidth - tableEditorViewSize.width, 0.0f,
                                              tableEditorViewSize.width, tableEditorViewSize.height);
     CGFloat topPadding = 0.0f;
     CGRect roomSwitchViewFrame = CGRectMake(0, topPadding,
