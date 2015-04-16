@@ -65,6 +65,12 @@
     [self.view addSubview:_tableEditorController.view];
     [self.view addSubview:_roomSwitchViewController.view];
     
+    //divider between room view / bottom bar
+    CGFloat diverHeight = 2.0f;
+    UIView *divider = [[UIView alloc] initWithFrame:CGRectMake(0, entireHeight - bottomBarHeight, roomSwitchViewFrame.size.width, diverHeight)];
+    divider.backgroundColor = UIColorFromRGB(0x4a4a4a);
+    [self.view addSubview:divider];
+    
 #if 0
     [self addChildViewController:_tableEditorController];
     [self addChildViewController:_roomSwitchViewController];

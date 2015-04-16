@@ -7,6 +7,7 @@
 //
 
 #import "TablePropertyEditorViewController.h"
+#import "Utils.h"
 
 @interface TablePropertyEditorViewController ()
 
@@ -26,6 +27,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //create right border
+    CALayer *leftBorder = [CALayer layer];
+    leftBorder.frame = CGRectMake(0.0f, 0.0f, 2.0, CGRectGetHeight(self.view.frame));
+    leftBorder.backgroundColor = UIColorFromRGB(0x000000).CGColor;
+    [self.view.layer addSublayer:leftBorder];
+    
     _tableNumberStepper.minimumValue = 1;
     _tableNumberStepper.maximumValue = 10;
     [_tableNumberLabel setText:@(1).stringValue];
